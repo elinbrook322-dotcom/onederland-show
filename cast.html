@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cast & Characters | Wonderland Theater</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      background: #0f0b08;
+      color: #f3e6d0;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      background: rgba(15,11,8,0.95);
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #f3e6d0;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -6px;
+      background: #c9a227;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+      background: linear-gradient(to bottom, rgba(110,31,31,0.35), transparent);
+    }
+
+    header h1 {
+      color: #e6c35c;
+      font-size: 2.8rem;
+      text-shadow: 0 0 20px rgba(201,162,39,0.5);
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+
+    /* ===== GRID ===== */
+    .cast-grid {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+    }
+
+    /* ===== CARD ===== */
+    .cast-card {
+      background: rgba(24, 18, 13, 0.85);
+      border-radius: 18px;
+      padding: 25px;
+      text-align: center;
+      border-left: 5px solid #c9a227; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .cast-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgba(201,162,39,0.4);
+    }
+
+    .cast-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+    }
+
+    .cast-card h3 {
+      color: #f0d98c;
+      margin-bottom: 6px;
+      font-size: 1.2rem;
+    }
+
+    .cast-card p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .cast-card a {
+      display: inline-block;
+      margin-top: 12px;
+      color: #e6c35c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .cast-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="cast.html">Cast</a>
+</nav>
+
+<header>
+  <h1>Cast & Characters</h1>
+  <p>Meet the performers of <strong>Roro Jonggrang</strong></p>
+</header>
+
+<section class="cast-grid">
+
+  <div class="cast-card">
+    <img src="Naila.jpeg" alt="Naila as Roro Jonggrang">
+    <h3>Roro Jonggrang</h3>
+    <p>Played by Naila</p>
+    <a href="CV Naila.pdf">View CV</a>
+  </div>
+
+  <div class="cast-card">
+    <img src="Argya.jpeg" alt="Argya as Bandung Bondowoso">
+    <h3>Bandung Bondowoso</h3>
+    <p>Played by Argya</p>
+    <a href="CV Argya.pdf">View CV</a>
+  </div>
+
+  <div class="cast-card">
+    <img src="Fathir.jpeg" alt="Fathir as Prabu Boko">
+    <h3>Prabu Boko</h3>
+    <p>Played by Fathir</p>
+    <a href="CV Fathir.pdf">View CV</a>
+  </div>
+
+  <div class="cast-card"> 
+    <img src="Uwais.jpeg" alt="Uwais as Patih Gupala">
+    <h3>Patih Gupala</h3> 
+    <p>Played by Uwais</p> 
+    <a href="CV Uwais.pdf">View CV</a> 
+  </div> 
+  
+  <div class="cast-card"> 
+    <img src="Raja.jpeg" alt="Raja as Fathir's Guard">
+    <h3>Fathir's Guard</h3> 
+    <p>Played by Raja</p> 
+    <a href="CV Raja.pdf">View CV</a> 
+  </div> 
+  
+  <div class="cast-card"> 
+    <img src="Aqil.jpeg" alt="Aqil as Fathir's Guard">
+    <h3>Fathir's Guard</h3> 
+    <p>Played by Aqil</p> 
+    <a href="CV Aqil.pdf">View CV</a> 
+  </div> 
+  
+  <div class="cast-card"> 
+    <img src="Zlatan.jpeg" alt="Zlatan as Argya's Guard">
+    <h3>Argya's Guard</h3> 
+    <p>Played by Zlatan</p> 
+    <a href="CV Zlatan.pdf">View CV</a> 
+  </div> 
+  
+  <div class="cast-card"> 
+    <img src="Danish.jpeg" alt="Danish as Argya's Guard">
+    <h3>Argya's Guard</h3> 
+    <p>Played by Danish</p> 
+    <a href="CV Danish.pdf">View CV</a> 
+  </div> 
+  
+  <div class="cast-card">
+    <img src="Athari.jpeg" alt="Athari as King of Jinns"> 
+    <h3>King Of Jinns</h3> 
+    <p>Played by Athari</p> 
+    <a href="CV Athari.pdf">View CV</a> 
+  </div> 
+  
+  <div class="cast-card">
+    <img src="Goldy.jpeg" alt="Goldy as the 2nd Jinn">
+    <h3>Jinn</h3> 
+    <p>Played by Goldy</p> 
+    <a href="CV Goldy.pdf">View CV</a> 
+  </div> 
+  
+  <div class="cast-card"> 
+    <img src="Asyrop.jpeg" alt="Asyrop as the 3rd Jinn">
+    <h3>Jinn</h3>
+    <p>Played by Asyrop</p> 
+    <a href="CV Asyrop.pdf">View CV</a> 
+  </div> 
+  
+  <div class="cast-card"> 
+    <img src="Icha.jpeg" alt="Icha as the 1st Lady-in-waiting">
+    <h3>Lady-in-waiting</h3> 
+    <p>Played by Icha</p> 
+    <a href="CV Icha.pdf">View CV</a> 
+  </div> 
+  
+  <div class="cast-card"> 
+    <img src="Shafa.jpeg" alt="Shafa as the 2nd Lady-in-waiting">
+    <h3>Lady-in-waiting</h3> 
+    <p>Played by Shafa</p> 
+    <a href="CV Shafa.pdf">View CV</a> 
+  </div> 
+
+  <div class="cast-card">
+    <img src="Zaza.jpeg" alt="Zaza as the 3rd Lady-in-waiting">
+    <h3>Lady-in-waiting</h3>
+    <p>Played by Zaza</p>
+    <a href="CV Zaza.pdf">View CV</a>
+  </div>
+
+  <div class="cast-card">
+    <img src="Tisya.jpeg" alt="Tisya as the 4th Lady-in-waiting">
+    <h3>Lady-in-waiting</h3>
+    <p>Played by Tisya</p>
+    <a href="CV Tisya.pdf">View CV</a>
+  </div>
+
+  <div class="cast-card">
+    <img src="Keisya.jpeg" alt="Keisya as the 5th Lady-in-waiting">
+    <h3>Lady-in-waiting</h3>
+    <p>Played by Keisya</p>
+    <a href="CV Keisya.pdf">View CV</a>
+  </div>
+
+  <div class="cast-card"> 
+    <img src="Alisya.jpeg" alt="Alisya as the 6th Lady-in-waiting">
+    <h3>Lady-in-waiting</h3>
+    <p>Played by Alisya</p> 
+    <a href="CV Alisya.pdf">View CV</a> 
+  </div>
+  
+  <div class="cast-card"> 
+    <img src="Fachry.jpeg" alt="Fachry as the Male Folk">
+    <h3>Male Folk</h3> 
+    <p>Played by Fachry</p> 
+    <a href="CV Fachry.pdf">View CV</a> 
+  </div> 
+  
+  <div class="cast-card"> 
+    <img src="Abiel.jpeg" alt="Abiel as the Male Folk">
+    <h3>Male Folk</h3> 
+    <p>Played by Abiel</p> 
+    <a href="CV Abiel.pdf">View CV</a> 
+  </div> 
+  
+  <div class="cast-card">
+    <img src="Reihan.jpeg" alt="Reihan as the Male Folk">
+    <h3>Male Folk</h3> 
+    <p>Played by Reihan</p> 
+    <a href="CV Reihan.pdf">View CV</a> 
+  </div> 
+  
+  <div class="cast-card"> 
+    <img src="Callysta.jpeg" alt="Callysta as the Female Folk">
+    <h3>Female Folk</h3> 
+    <p>Played by Callysta</p> 
+    <a href="CV Callysta.pdf">View CV</a> 
+  </div> 
+  
+  <div class="cast-card"> 
+    <img src="Fio.jpeg" alt="Fio as the Female Folk and the Narrator">
+    <h3>Female Folk & Narrator</h3> 
+    <p>Played by Fio</p> 
+    <a href="CV Fio.pdf">View CV</a> 
+  </div> 
+
+  <div class="cast-card">
+    <img src="Gladys.jpeg" alt="Gladys as the Female Folk">
+    <h3>Female Folk</h3>
+    <p>Played by Gladys</p>
+    <a href="CV Gladys.pdf">View CV</a>
+  </div>
+  
+  <div class="cast-card">
+    <img src="Faiza.jpeg" alt="Faiza as the Female">
+    <h3>Female Folk</h3>
+    <p>Played by Faiza</p>
+    <a href="CV Faiza.pdf">View CV</a>
+  </div>
+
+</section>
+
+</body>
+</html>

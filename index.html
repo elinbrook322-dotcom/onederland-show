@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Onederland Show | Roro Jonggrang</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      background: #0f0b08;
+      color: #f3e6d0;
+    }
+
+    .present {
+      letter-spacing: 3px;
+      font-size: 14px;
+      opacity: 0;
+      margin: 10px 0;
+      animation: fadeUp 1.2s ease forwards;
+    }
+
+    .hero h1 {
+      animation: fadeUp 1.2s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    .subtitle {
+      opacity: 0;
+      animation: fadeUp 1.2s ease forwards;
+      animation-delay: 1s;
+    }
+
+    .ornament {
+      width: 200px;
+      height: 4px;
+      background: linear-gradient(to right, transparent, #c9a227, transparent);
+      margin: 25px auto 0;
+      opacity: 0;
+      animation: fadeUp 1.2s ease forwards;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes fadeUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+   }
+
+
+    /* ===== MAIN COVER (HERO) ===== */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      height: 100vh;
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      background:
+        radial-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+        url("stage.jpg");
+
+      background-size: cover;
+      background-position: center 80%;
+      background-repeat: no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+      radial-gradient(circle, rgba(255,215,120,0.25) 1px, transparent 1px);
+      background-size: 4px 4px;
+      opacity: 0.15;
+      animation: dustMove 20s linear infinite;
+    }
+
+    @keyframes dustMove {
+      from { transform: translateY(0); }
+      to { transform: translateY(-200px); }
+    }
+
+    /* Golden spotlight glow */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 20px;
+      pointer-events: none;
+      box-shadow: 0 0 40px rgba(201,162,39,0.25);
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      padding: 90px;
+      animation: fadeIn 2s ease;
+    }
+
+    /* === TITLE ENTRANCE === */
+    .hero h1 {
+      font-size: 60px;
+      letter-spacing: 3px;
+      color: #f3e6d0;
+      text-shadow: 0 0 25px rgba(201,162,39,0.7);
+      animation: titleReveal 2s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes titleReveal {
+      0% {transform: translateY(40px); opacity: 0;}
+      100% {transform: translateY(0); opacity: 1;}
+    }
+
+    .hero p {
+      margin-top: 15px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* SOFT GOLD LIGHT */
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(230,195,92,0.2), transparent 40%);
+    }
+
+    body{
+      font-family: Georgia, serif;
+      background: #0f0b08;
+      color:#f3e6d0;
+      position: relative;
+    }
+
+    /* Cinematic color overlay */
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+        radial-gradient(circle at top, rgba(255,180,80,0.08), transparent 40%),
+        radial-gradient(circle at bottom, rgba(120,0,0,0.15), transparent 60%);
+      pointer-events:none;
+      mix-blend-mode: screen;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(2, 1, 1, 0.95);
+      backdrop-filter: blur(6px);
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 16px;
+      z-index: 10;
+      border-bottom: 2px solid rgba(201,162,39,0.4);
+      box-shadow: 0 2px 15px rgba(201,162,39,0.15);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #f3e6d0;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -6px;
+      background: #c9a227;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 90px 20px;
+      animation: sectionFade 1s ease both;
+    }
+
+    @keyframes sectionFade {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+ 
+    h2 {
+      text-align: center;
+      color: #e6c35c;
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+    }
+
+    .story {
+      text-align: justify;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .about-flex {
+      display: flex;
+      gap: 50px; /* Space between text and image */
+      justify-content: center;
+      align-items: center; /* Vertically center items */
+      flex-wrap: wrap; /* Wrap on smaller screens */
+    }
+
+    .about-text { 
+      flex: 1; 
+      min-width: 280px;
+    }
+
+    /* === POSTER THEATER ANIMATION === */
+    .poster-img {
+      width: 320px;
+      border-radius: 14px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      animation: posterFloat 4s ease-in-out infinite;
+    }
+
+    /* Gentle floating like it's under stage air */
+    @keyframes posterFloat {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+
+    /* Spotlight glow when hovered */
+    .poster-img:hover {
+      transform: scale(1.08);
+      box-shadow:
+        0 0 20px rgba(201,162,39,0.6),
+        0 0 50px rgba(201,162,39,0.4);
+    }
+
+    /* ===== CARDS ===== */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: rgba(27,18,12,0.85);
+      padding: 30px;
+      border-radius: 18px;
+      border-left: 6px solid #c9a227;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgba(201,162,39,0.4);
+    }
+
+    .card h3 {
+      margin-bottom: 15px;
+      color: #e6c35c;
+    }
+    
+    footer {
+      background: #1b120c;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+
+    footer span { color: #e6c35c; }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 38px; }
+      .about-flex { flex-direction: column; text-align: center; }
+      .poster-img { width: 80%; }
+    }
+
+    /* ===== BATIK CORNER ORNAMENTS ===== */
+    .corner {
+      position: fixed;  
+      width: clamp(70px, 10vw, 150px); /* auto scales with screen */
+      opacity: 0.75;
+      pointer-events: none;
+      z-index: 1000;
+      filter: drop-shadow(0 0 10px rgba(201,162,39,0.35));
+    }
+
+    .corner.tl { top: 10px; left: 10px; }
+    .corner.tr { top: 10px; right: 10px; transform: scaleX(-1); }
+    .corner.bl { bottom: 10px; left: 10px; transform: scaleY(-1); }
+    .corner.br { bottom: 10px; right: 10px; transform: scale(-1); }
+
+    /* ===== BATIK ORNAMENTS INSIDE SECTIONS ===== */
+    section {
+      position: relative;
+      overflow: hidden;
+   }
+
+    /* Batik corners INSIDE sections */
+    section::before,
+    section::after {
+      content: "";
+      position: absolute;
+      width: clamp(70px, 10vw, 140px);
+      height: clamp(70px, 10vw, 140px);
+      background: url("ornament-tl.png") no-repeat center/contain;
+      opacity: 0.12;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Top Left */
+    section::before {
+      top: 10px;
+      left: 10px;
+    }
+
+    /* Bottom Right */
+    section::after {
+      bottom: 10px;
+      right: 10px;
+      transform: rotate(180deg);
+    }
+
+    /* ===== SECTION DIVIDER ===== */
+    .section-divider {
+      height: 60px;
+      background:
+      linear-gradient(to bottom, transparent, rgba(201,162,39,0.15), transparent);
+      position: relative;
+    }
+
+    /* Gold ornamental line */
+    .section-divider {
+      height: 60px;
+      position: relative;
+      background:
+      linear-gradient(to bottom, transparent, rgba(201,162,39,0.15), transparent);
+      overflow: hidden;
+    }
+
+    .section-divider::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 60%;
+      height: 3px;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(to right, transparent, #c9a227, transparent);
+      box-shadow: 0 0 12px rgba(201,162,39,0.6);
+    }
+
+  </style>
+<body>
+
+  <img src="Ornament.png" class="corner tl">
+  <img src="Ornament.png" class="corner tr">
+  <img src="Ornament.png" class="corner bl">
+  <img src="Ornament.png" class="corner br">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="present">Class 9.1 Theater Presents</p>
+      <h1>Onederland Show</h1>
+      <p class="subtitle">A Performing Arts Experience Inspired by the Legend of <span>Roro Jonggrang</span></p>
+      <div class="ornament"></div>
+    </div>
+  </section>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="cast.html">Cast</a>
+  </nav>
+
+  <!-- ABOUT -->
+  <section class="about-flex">
+    <div class="about-text">
+      <h2>About Onederland Show</h2>
+      <p class="story">
+        Onederland Show adalah panggung seni pertunjukan yang menghidupkan kembali
+        legenda-legenda Nusantara melalui drama, tari, musik, dan visual teatrikal.
+        Produksi unggulan kami mengangkat kisah Roro Jonggrang dalam balutan fantasi,
+        budaya, dan keindahan artistik yang memukau.
+      </p>
+    </div>
+
+    <img src="Poster 9.1.jpg" alt="Poster Wonderland Theater" class="poster-img">
+  </section>
+
+   <!-- EXPERIENCE -->
+  <section>
+    <h2>The Experience</h2> 
+    <div class="cards">
+      <div class="card">
+        <h3>🎭 Theatrical Storytelling</h3>
+        <p>Drama panggung dengan dialog English dan Indonesia, tari tradisional, dan ekspresi visual khas Nusantara.</p>
+      </div>
+
+      <div class="card">
+        <h3>🏯 Cultural Aesthetics</h3>
+        <p>Ornamen batik, siluet candi, dan cahaya panggung menciptakan suasana magis kerajaan Jawa.</p>
+      </div>
+
+      <div class="card">
+        <h3>✨ Fantasy & Legend</h3>
+        <p>Kisah cinta, kutukan, dan keajaiban Roro Jonggrang disajikan dengan sentuhan modern.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 <span>Wonderland Theater</span></p>
+    <p>Celebrating Indonesian Legends Through Performing Arts</p>
+  </footer>
+
+</body>
+</html>
